@@ -58,3 +58,10 @@ void hash1::ajouterItem(string nom, string tel)
         next = &hashItem;
     }
 }
+void hash1::afficherItems()
+{
+    for (int index = 0; index < tailleTableau; index++)
+    {
+        afficherItemsDansIndex(index);
+    }
+};
