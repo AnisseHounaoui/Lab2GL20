@@ -105,3 +105,15 @@ void hash1::chercherItem(string nom)
     }
     printf("Non trouvée!\n");
 }
+
+void hash1::afficherItemsDansIndex(int index) {
+    if (table[index].size() == 0) {
+        cout << "Pas d'element" << endl;
+    }
+    else {
+        auto bItr = table[index].begin();
+        for (; bItr != table[index].end(); bItr++) {
+            cout << "Nom: " << bItr->first << " Index: " << bItr->second << endl;
+        }
+    }
+}
