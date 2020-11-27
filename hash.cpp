@@ -65,3 +65,43 @@ void hash1::afficherItems()
         afficherItemsDansIndex(index);
     }
 };
+
+void hash1::supprimerItem(string nom)
+{
+    int index = HASH(nom);
+    if (HashTable[index]->nom == "vide")
+    {
+        return;
+    }
+    item *next = HashTable[index]->next;
+    while (next != NULL)
+    {   
+        if (strcmp(next->nom, nom) == 0)
+        {
+            next= &(next->next)
+        }
+        next = next->next;
+    }
+}
+
+
+void hash1::chercherItem(string nom)
+{
+    int index = HASH(nom);
+    if (HashTable[index]->nom == "vide")
+    {
+        printf("Non trouvée!\n");
+        return;
+    }
+    item *next = HashTable[index]->next;
+    while (next != NULL)
+    {   
+        if (strcmp(next->nom, nom) == 0)
+        {
+            printf("Trouvée!\n");
+            return;
+        }
+        next = next->next;
+    }
+    printf("Non trouvée!\n");
+}
